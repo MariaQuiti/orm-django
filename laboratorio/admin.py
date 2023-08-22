@@ -10,15 +10,15 @@ class DirectorGeneralAdmin(admin.ModelAdmin):
     ordering = ("nombre",)
 
 class ProductoAdmin(admin.ModelAdmin):
-    list_display = ("id", "nombre", "laboratorio", "f_fabricacion", "p_costo", "p_venta")
-    # list_filter = ("laboratorio", "f_fabricacion")
+    list_display = ("id", "nombre", "laboratorio", "f_year", "p_costo", "p_venta")
     ordering = ("nombre", "laboratorio")
     list_display_links = ("nombre", "laboratorio")
     list_filter = ("nombre", "laboratorio")
 
-    def year_fabricacion(self, obj):
+    def f_year(self, obj):
         return obj.f_fabricacion.year
-    year_fabricacion.short_description = "F Fabricación"
+    
+    f_year.short_description = "F Fabricación"
 
 
 admin.site.register(Laboratorio, LaboratorioAdmin)
