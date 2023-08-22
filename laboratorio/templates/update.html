@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Editar Laboratorio</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ formedicion.as_p }}
-        <button type="submit">Guardar</button>
-    </form>
+    <div class="container p-4">
+        <h1 class="text-center display-1">Editar Laboratorio</h1>
+    </div>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {{ formedicion.as_p }}
+            <button type="submit" class="btn btn-success">Guardar</button>
+        </form>
+    </div>
 {% endblock %}

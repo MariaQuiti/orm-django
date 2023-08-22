@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Eliminar laboratorio</h1>
-    <form method="post">
-        {% csrf_token %}
-        <strong>
-            Estas seguro de eliminar?
-            {{ lab.nombre }}
-        </strong>
-        <button type="submit">Si, confirmo</button>
-    </form>
+    <div class="container p-4">
+        <h1 class="text-center display-1">Eliminar laboratorio</h1>
+    </div>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <strong>
+                Estas seguro de eliminar?
+                {{ lab.nombre }}
+            </strong>
+            <button type="submit" class="btn btn-danger">Si, confirmo</button>
+        </form>
+    </div>
 {% endblock %}
